@@ -1,20 +1,23 @@
 const options = ["rock", "paper", "scissors"];
-let playerSelection = prompt("choose", "");
-let computerSelection = getcomputerSelection();
+let compChoice = getComputerChoie();
 
-function getcomputerSelection() {
+function getComputerChoie() {
     return options[Math.floor(Math.random() * 3)];
+}
+function playerSelec(){
+    let playerChoice = prompt("choose", "");
+
 }
 
 
-function gamePlay() {
-    if (playerSelection === computerSelection) {
+function RoundPlay() {
+    
+    if (playerChoice === compChoice) {
         return ("Ah! it's a tie");
-    } else if ((computerSelection === "rock" && playerSelection === "scissors") || (computerSelection === "paper" && playerSelection === "rock") || (computerSelection === "scissors" && playerSelection === "paper")) {
-        return ("oop you lost!");
-    } else if ((computerSelection === "rock" && playerSelection === "paper") || (computerSelection === "scissors" && playerSelection === "rock")) {
+    } else if ((compChoice === "rock" && playerChoice === "scissors") || (compChoice === "paper" && playerChoice === "rock") || (compChoice === "scissors" && playerChoice === "paper")) {
+        return ("oop you lost! try again");
+    } else if ((compChoice === "rock" && playerChoice === "paper") || (compChoice === "scissors" && playerChoice === "rock")) {
         return ("you won!");
     }
 }
-// console.log(gamePlay());
-console.log(`${gamePlay()} the computer chose ${computerSelection}`);
+console.log(`${RoundPlay()} the computer chose ${compChoice}`);
